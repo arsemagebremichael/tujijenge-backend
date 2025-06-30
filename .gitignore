@@ -1,10 +1,9 @@
 tujijengeenv/
+*.py[co]
+db.sqlite3
+tujijenge/tujijenge/__pycache__/settings.cpython-310.pyc
+tujijenge/tujijenge/__pycache__/urls.cpython-310.pyc
+*.pyc
+__pycache__
 __pycache__/
 *.pyc/
-db.sqlite3
-__pycache__/*.pyc
-__pycache__/
-*.pyc
-__pycache__/
-*.py[co]*.pyc
-__pycache__/
