@@ -2,8 +2,11 @@
 
 
 from django.test import TestCase
+<<<<<<< HEAD
+=======
 from django.db.utils import IntegrityError
 from datetime import timedelta
+>>>>>>> 91d623c5f021582307144920b7713b6d7c89832a
 from django.utils import timezone
 from users.models import Mamamboga  
 from .models import Community, CommunityMembers, TrainingSessions, TrainingRegistration
@@ -33,6 +36,8 @@ class ModelTests(TestCase):
             is_cancelled=False,
             updated_at=None
         )
+<<<<<<< HEAD
+=======
         self.training_registration = TrainingRegistration.objects.create(
             registration_id='R001',
             session=self.training_session,
@@ -47,6 +52,7 @@ class ModelTests(TestCase):
             joined_date=timezone.now()
     
         )
+>>>>>>> 91d623c5f021582307144920b7713b6d7c89832a
 
     def test_community_creation(self):
         self.assertEqual(self.community.name, 'Community A')
@@ -54,20 +60,48 @@ class ModelTests(TestCase):
         self.assertEqual(self.community.created_by, self.mamamboga)
 
     def test_community_member_creation(self):
+<<<<<<< HEAD
+        member = CommunityMembers.objects.create(
+            membership_id='CM001',
+            mamamboga=self.mamamboga,
+            community=self.community,
+            joined_date=timezone.now()
+        )
+        self.assertEqual(member.mamamboga, self.mamamboga)
+        self.assertEqual(member.community, self.community)
+        self.assertIn('in', str(member))
+
+    def test_trainingsession_creation(self):
+=======
         self.assertEqual(self.community_member.mamamboga, self.mamamboga)
         self.assertEqual(self.community_member.community, self.community)
         self.assertIn('in', str(self.community_member))
 
     def test_training_session_creation(self):
+>>>>>>> 91d623c5f021582307144920b7713b6d7c89832a
         self.assertEqual(self.training_session.title, 'Food Safety')
         self.assertEqual(str(self.training_session), 'Food Safety')
         self.assertFalse(self.training_session.is_cancelled)
 
     def test_training_registration(self):
+<<<<<<< HEAD
+        registration = TrainingRegistration.objects.create(
+            registration_id='R001',
+            session=self.training_session,
+            community=self.community,
+            mamamboga=self.mamamboga,
+            registration_date=timezone.now()
+        )
+        self.assertEqual(registration.session, self.training_session)
+        self.assertEqual(registration.community, self.community)
+        self.assertEqual(registration.mamamboga, self.mamamboga)
+        self.assertIn('Registration', str(registration))
+=======
         self.assertEqual(self.training_registration.session, self.training_session)
         self.assertEqual(self.training_registration.community, self.community)
         self.assertEqual(self.training_registration.mamamboga, self.mamamboga)
         self.assertIn('Registration', str(self.training_registration))
+>>>>>>> 91d623c5f021582307144920b7713b6d7c89832a
 
     def test_nullable_fields(self):
         community = Community.objects.create(
@@ -95,6 +129,9 @@ class ModelTests(TestCase):
             mamamboga=self.mamamboga
         )
         self.assertIsNone(registration.registration_date)
+<<<<<<< HEAD
+        self.assertIsNone(registration.cancelled_at)
+=======
         self.assertIsNone(registration.cancelled_at)
         
     def test_read_community(self):
@@ -174,3 +211,4 @@ class ModelTests(TestCase):
         
         
         
+>>>>>>> 91d623c5f021582307144920b7713b6d7c89832a

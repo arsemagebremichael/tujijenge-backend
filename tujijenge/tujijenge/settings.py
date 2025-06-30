@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'comm_api',
     'communities',
+    'rest_framework',
     'payments',
     'users',
     'rest_framework',
