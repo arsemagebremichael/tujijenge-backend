@@ -16,9 +16,10 @@ class Product(models.Model):
     )
     created_at = models.DateTimeField(auto_now_add=True)
 
-
     def __str__(self):
         return self.product_name
+
+
 
 class Stock(models.Model):
     stock_id = models.AutoField(primary_key=True)
@@ -40,3 +41,5 @@ class Stock(models.Model):
    
     # def __str__(self):
     #     return f"Stock {self.stock_id} for {f'{self.mamamboga.first_name} {self.mamamboga.last_name or ''}'.strip() if self.mamamboga else 'No Mamamboga'}"
+
+    
